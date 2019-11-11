@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Password Manager</title>
+		
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<link rel="stylesheet" type="text/css" href="styles/dialog.css">
+        <link rel="icon" type="image/png" href="images/logo.png">
+    </head>
+	<body>
+		<header>
+			<span class="rocket-logo"></span><h1>Password Manager</h1>
+			<div class="button-container">
+				<button type="button" class="button button-possibly-bad logout-button" onclick="doLogout()">Log Out</button>
+				<button type="button" class="button settings-button" onclick="setView('settings')">Settings</button>
+				<button type="button" class="back button" onclick="setView('main')">&lt; Back</button>
+			</div>
+		</header>
+		<main>
+			<div id="login" class="active view">
+				<div class="container">
+					<div class="rocket-logo"></div>
+					<p>Hi! To get started, please log in (if you've got some credentials stored already) or add your first credentials by using the options below.</p>
+					<div class="button-container">
+						<button type="button" class="button button-main" onclick="showLoginDialog('')">Log in</button>
+						<button type="button" class="button button-good" onclick="showRegisterDialog('')">Add new</button>
+						<button type="button" class="button" onclick="showImportDialog('')">Import</button>
+					</div>
+					<p style="margin-top: 1.25em;">Developed with <img style="height: 1.5em; vertical-align: middle;" src="images/heart.png" alt="love"> by Space for some company.</p>
+				</div>
+			</div>
+			<div id="main" class="view">
+				<div class="container">
+					<div class="credentials">
+					</div>
+				</div>
+			</div>
+			<div id="settings" class="view">
+				<div class="container">
+					<h2>Settings</h2>
+					<form id="settings-form">
+						<h3>Change passphrase</h3>
+						<div class="form-input">
+							<label for="old-passphrase">Old passphrase</label>
+							<input type="password" id="old-passphrase">
+						</div>
+						<div class="form-input">
+							<label for="new-passphrase">New passphrase</label>
+							<input type="password" id="new-passphrase">
+						</div>
+						<div class="form-input">
+							<label for="confirm-new-passphrase">Confirm new passphrase</label>
+							<input type="password" id="confirm-new-passphrase">
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="button-container">
+				<button type="button" class="button button-good add-new-credential" onclick="insertBlankCredential()">Add</button>
+				<button type="button" class="button" onclick="doExport()">Export</button>
+				<button type="button" class="button button-good" onclick="saveSettings()">Save</button>
+			</div>
+		</footer>
+
+		<!-- script includes -->
+		<script src="scripts/dialog.js"></script>
+		<script src="scripts/credentials.js"></script>
+		<script src="scripts/crypto.js"></script>
+		<script src="scripts/storage.js"></script>
+		<script src="scripts/validation.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>

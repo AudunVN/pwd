@@ -1,0 +1,90 @@
+.dialog-backdrop,
+.dialog {
+	visibility: hidden;
+}
+
+.dialog-visible {
+	overflow: hidden;
+}
+
+.dialog-visible .dialog-backdrop,
+.dialog-visible .dialog {
+	visibility: visible;
+}
+
+.dialog-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	transition: opacity 0.25s ease, background 0.25s ease;
+	opacity: 0;
+	background: rgba(0,0,0,0.0);
+	overflow: auto;
+	padding-bottom: 1em;
+}
+
+.dialog-visible .dialog-backdrop {
+	opacity: 1;
+	background: rgba(0,0,0,0.5);
+}
+
+.dialog.dialog-hidden {
+    opacity: 0;
+}
+
+.dialog {
+	margin: 0 auto;
+	position: relative;
+	width: 80%;
+	max-width: 800px;
+	box-sizing: border-box;
+	margin-top: 1em;
+	opacity: 1;
+	transition: opacity 0.5s ease;	
+}
+
+.dialog-header .close-dialog-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 1.25rem;
+	padding-top: 0;
+	font-weight: 600;
+}
+
+.dialog-header h4 {
+	margin: 0;
+}
+
+.dialog > * {
+    box-sizing: border-box;
+}
+
+.dialog-header,
+.dialog-footer {
+	background: #EEE;
+	margin: 0;
+	padding: 0.5em;
+	width: 100%;
+}
+
+.dialog-content {
+	padding: 0.5em;
+	width: 100%;
+	background: #FFF;
+}
+
+.dialog .dialog-content h4 {
+    text-align: center;
+}
+
+.dialog h4:first-child {
+    margin-top: 0;
+}
+
+.dialog p {
+	margin-bottom: 1em;
+}
