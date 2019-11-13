@@ -328,7 +328,7 @@ footer {
 }
 
 .value-hidden .hide-field-value {
-	display: inline-block;	
+	display: inline-block;
 }
 
 .value-hidden.hide-value .hide-field-value {
@@ -382,6 +382,11 @@ footer {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	letter-spacing: -2.5px;
+
+	width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 /* VIEW STATE STYLES */
