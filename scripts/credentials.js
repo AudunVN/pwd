@@ -32,7 +32,7 @@ function getCredential(id) {
 			},
 			{
 				name: "Password",
-				value: "",
+				value: generatePassphrase(32),
 				hidden: true
 			},
 			{
@@ -124,6 +124,17 @@ async function loadCredentials(passphraseHash) {
 		return decryptedData;
 	}
 }
+
+function generatePassphrase(length) {
+	let passphrase = '';
+	let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+	for (let i = 0; i < characters.length; i++) {
+		passphrase += characters.charAt(Math.floor(Math.random() * characters.length));
+	}
+
+	return passphrase;
+ }
 
 // DOM-RELATED FUNCTIONS
 // used for rendering credentials to the DOM and/or reading credential changes back from the user
