@@ -61,6 +61,8 @@ function showLoginDialog(message) {
 		"<button onclick=\"doLogin()\" class='button button-main close-dialog-button' role='button'>Log in</button>"
 	);
 
+	dialog.querySelector("input#passphrase").focus();
+
 	dialog.querySelector("input").addEventListener("keyup", function(event) {
 		if (event.key === "Enter") {
 			doLogin();
@@ -102,6 +104,8 @@ function showRegisterDialog(message) {
 	    '</div>',
 		"<button onclick=\"doRegister()\" class='button button-main' role='button'>Continue</button> <button class='button button-possibly-bad close-dialog-button' role='button'>Cancel</button>"
 	);
+
+	dialog.querySelector("input#passphrase").focus();
 
 	for (const input of dialog.querySelectorAll("input")) {
 		input.addEventListener("keyup", function(event) {
@@ -163,6 +167,8 @@ function showImportDialog(message) {
 	    '</div>',
 		"<button onclick=\"doImport()\" class='button button-good' role='button'>Import</button> <button class='button button-possibly-bad close-dialog-button' role='button'>Cancel</button>"
 	);
+
+	dialog.querySelector("input#passphrase").focus();
 
 	dialog.querySelector("#passphrase").addEventListener("keyup", function(event) {
 		if (event.key === "Enter") {
