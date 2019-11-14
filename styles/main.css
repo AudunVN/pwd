@@ -275,6 +275,14 @@ footer {
 	padding: 1rem;
 }
 
+.credential:not(.editing) .row .field-name,
+.credential:not(.editing) .row .field-value {
+	width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .field-actions p {
 	margin: 1rem;
 	text-align: right;
@@ -382,11 +390,6 @@ footer {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	letter-spacing: -2.5px;
-
-	width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 /* VIEW STATE STYLES */
